@@ -1,32 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-//JSX RULES
-// return single element 
-// div / section / article or Fragement 
-// use camelCase for html attributes
-// className instead of class
-// close every element 
-// formatting
-// self note: either a <div>....</div> containing everything else or <React.Fragment>....</React.Fragment> or <>...</>
+// Nested Components, React Tools
+// function Greeting() {
+//   return (
+//     <div>
+//       <h2> heyyyyyy </h2>
+//       <p> this is a message</p>
+//       <h3>hiiii</h3>
+//       <p>hllllllllllllllllll</p>
+//     </div>
+//   );
+// }
+
+// same as above 
 
 function Greeting() {
   return (
-    <React.Fragment>
-      <div>
-        <h1>hey</h1>
-        <ul>
-          <li>
-            <a href="#">a</a>
-          </li>
-          <img src='' alt='' />
-          <inpur type='text' name='' id='' />
-        </ul>
-      </div>
-    </React.Fragment >
+    <div>
+      <Person />
+      <Message />
+      <Per />
+    </div>
   );
 }
 
-ReactDOM.render(<Greeting />,
-  document.getElementById('root')
-);
+const Person = () => <h2>heyyyyyy</h2>;
+const Message = () => {
+  return <p> this is a message </p>;
+};
+const Per = () => <section><h3>hiiii</h3>
+  <p>hllllllllllllllllll</p>
+</section>;
+
+ReactDOM.render(<Greeting />, document.getElementById('root'));
